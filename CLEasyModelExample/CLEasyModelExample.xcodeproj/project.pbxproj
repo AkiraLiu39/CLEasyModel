@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583ACBCE1A0B421000A275EA /* ModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 583ACBCD1A0B421000A275EA /* ModelClass.m */; };
+		583ACBD11A0B425100A275EA /* ModelSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 583ACBD01A0B425100A275EA /* ModelSubClass.m */; };
 		5868797F1A0547870002316B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5868797E1A0547870002316B /* Foundation.framework */; };
 		586879821A0547870002316B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 586879811A0547870002316B /* main.m */; };
 		586879861A0547870002316B /* CLEasyModelExample.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 586879851A0547870002316B /* CLEasyModelExample.1 */; };
@@ -27,6 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		583ACBCC1A0B421000A275EA /* ModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelClass.h; sourceTree = "<group>"; };
+		583ACBCD1A0B421000A275EA /* ModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelClass.m; sourceTree = "<group>"; };
+		583ACBCF1A0B425100A275EA /* ModelSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSubClass.h; sourceTree = "<group>"; };
+		583ACBD01A0B425100A275EA /* ModelSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSubClass.m; sourceTree = "<group>"; };
 		5868797B1A0547870002316B /* CLEasyModelExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLEasyModelExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		5868797E1A0547870002316B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		586879811A0547870002316B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +86,10 @@
 				586879811A0547870002316B /* main.m */,
 				586879851A0547870002316B /* CLEasyModelExample.1 */,
 				586879831A0547870002316B /* Supporting Files */,
+				583ACBCC1A0B421000A275EA /* ModelClass.h */,
+				583ACBCD1A0B421000A275EA /* ModelClass.m */,
+				583ACBCF1A0B425100A275EA /* ModelSubClass.h */,
+				583ACBD01A0B425100A275EA /* ModelSubClass.m */,
 			);
 			path = CLEasyModelExample;
 			sourceTree = "<group>";
@@ -152,8 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583ACBCE1A0B421000A275EA /* ModelClass.m in Sources */,
 				5868798F1A05481E0002316B /* NSObject+CLEasyModel.m in Sources */,
 				586879821A0547870002316B /* main.m in Sources */,
+				583ACBD11A0B425100A275EA /* ModelSubClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +279,7 @@
 				5868798B1A0547870002316B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,15 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import "CLEasyModel/NSObject+CLEasyModel.h"
+#import "ModelClass.h"
+#import "ModelSubClass.h"
+
+void testDate();
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
+        testDate();
     }
     return 0;
+}
+
+void testDate(){
+    NSDictionary *subModelClassDict = @{
+                                        @"name":@"name in subModelClass",
+                                        @"endDate":@"2014-02-11"
+                                        };
+    NSDictionary *modelClassDict = @{
+                           @"name":@"name in modelClass",
+                           @"startDate":@"2014-01-10",
+                           @"subClass":subModelClassDict};
+    ModelClass *model = [ModelClass instanceWithDict:modelClassDict];
+    NSLog(@" result : %@",model);
+    
 }
 
