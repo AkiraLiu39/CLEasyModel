@@ -39,7 +39,7 @@
         NSString *propertyName = [NSString stringWithUTF8String:property_getName(property)];
         id propertyValue = dict[propertyName];
         
-        if (propertyValue != nil && propertyValue != [NSNull null]) {
+        if (propertyValue != nil && ![propertyValue isEqual: [NSNull null]]) {
             NSString *propertyAttr = [NSString stringWithUTF8String:property_getAttributes(property)];
             if ([propertyAttr hasPrefix:@"T@"]) {
                 // 该属性是一个对象
@@ -63,9 +63,14 @@
                     }
                 }else if([propertyAttr hasPrefix:@"T@\"NSDate\""]){
                     //该属性为NSDate对象
-                    NSDateFormatter *formatter = [self dateFormatter];
-                    formatter.dateFormat = [self dateFormatterWithDateProperty:propertyName];
-                    propertyValue = [formatter dateFromString:propertyValue];
+                    NSString *dateFormat = [self dateFormatterWithDateProperty:propertyName];
+                    if (dateFormat.length) {
+                        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+                        formatter.dateFormat = dateFormat;
+                        propertyValue = [formatter dateFromString:propertyValue];
+                    }else{
+                        propertyValue = nil;
+                    }
                 }
             }
             [self setValue:propertyValue forKey:propertyName];
@@ -74,14 +79,6 @@
     free(properties);
 }
 
--(NSDateFormatter *)dateFormatter{
-    static dispatch_once_t onceToken;
-    static NSDateFormatter *dateFormatter;
-    dispatch_once(&onceToken, ^{
-        dateFormatter = [[NSDateFormatter alloc]init];
-    });
-    return dateFormatter;
-}
 -(Class) classWithArrayProperty:(NSString *)propertyName{
     return nil;
 }

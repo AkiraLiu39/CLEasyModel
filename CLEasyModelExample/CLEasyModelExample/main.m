@@ -32,7 +32,7 @@ void testDate(){
                            @"startDate":@"2014-01-10",
                            @"subClass":subModelClassDict};
     ModelClass *model = [ModelClass instanceWithDict:modelClassDict];
-    NSLog(@" result : %@",model);
+    NSLog(@" result : %@ isNull ? : %d",model,model.subClass.endDate == nil);
     
 }
 
